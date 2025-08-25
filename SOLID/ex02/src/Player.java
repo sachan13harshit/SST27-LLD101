@@ -1,12 +1,11 @@
-public class Player {
+public class Player implements Playable {
     private Frame last;
-    void play(byte[] fileBytes){
-        // decode
-        Frame f = new Frame(fileBytes); // pretend decoding
+
+    public void play(byte[] fileBytes) {
+        Frame f = new Frame(fileBytes);
         last = f;
-        // draw UI
-        System.out.println("\u25B6 Playing " + fileBytes.length + " bytes");
-        // cache
-        System.out.println("Cached last frame? " + (last!=null));
+
+        System.out.println("\u25B6 plays " + fileBytes.length + " bytes");
+        System.out.println("Caching last frame? " + (last!=null));
     }
 }
