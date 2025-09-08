@@ -11,6 +11,15 @@ public class Demo {
         // Baseline behavior (already works)
         base.notify("Baseline email only.");
 
+         Notifier smsAndEmail = new SMSDecorator(base, "+91-99999-11111");
+        smsAndEmail.notify("email and sms");
+
+        Notifier waAndEmail = new WhatsAppDecorator(base, "+91-88888-88888");
+        waAndEmail.notify("whatsapp and email");
+
+        Notifier slackAndEmail = new SlackDecorator(base, "deployments");
+        slackAndEmail.notify("slack and email");
+
         // === YOUR TASKS ===
         // 1) Create a base decorator class: NotifierDecorator implements Notifier and wraps another Notifier.
         // 2) Create concrete decorators:
