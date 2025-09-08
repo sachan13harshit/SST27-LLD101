@@ -9,7 +9,7 @@ public class App {
         Path csv = Path.of(args[0]);
 
         ProfileImporter importer = new CsvProfileImporter(
-            new NaiveCsvReader(),
+            new CsvReaderAdapter(), 
             new ProfileService()
         );
 

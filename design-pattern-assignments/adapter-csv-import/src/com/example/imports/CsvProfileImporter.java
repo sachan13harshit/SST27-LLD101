@@ -4,17 +4,17 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class CsvProfileImporter implements ProfileImporter {
-    private final NaiveCsvReader csvReader;
+    private final DataReader dataReader;
     private final ProfileService profileService;
 
-    public CsvProfileImporter(NaiveCsvReader csvReader, ProfileService profileService) {
-        this.csvReader = csvReader;
+    public CsvProfileImporter(DataReader dataReader, ProfileService profileService) {
+        this.dataReader = dataReader;
         this.profileService = profileService;
     }
 
     @Override
     public int importFrom(Path csvFile) {
-        List<String[]> rows = csvReader.read(csvFile);
+        List<String[]> rows = dataReader.read(csvFile);
         int imported = 0;
         for (String[] row : rows) {
             if (row.length < 3) {
