@@ -1,8 +1,6 @@
-package com.example.render;
-
 public class Glyph {
-    private final char ch;               // extrinsic
-    private final TextStyle style;       // intrinsic (flyweight)
+    private final char ch;               
+    private final TextStyle style;      
 
     public Glyph(char ch, TextStyle style) {
         this.ch = ch;

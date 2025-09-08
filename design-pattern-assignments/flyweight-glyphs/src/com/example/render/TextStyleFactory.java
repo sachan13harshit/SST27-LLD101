@@ -1,4 +1,3 @@
-package com.example.render;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

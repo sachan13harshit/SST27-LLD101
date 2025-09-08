@@ -1,4 +1,3 @@
-package com.example.render;
 
 public class Renderer {
     public int render(String text) {
